@@ -17,12 +17,27 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
   <meta property="og:description" content="Afsluiting van de zomer in De Pasto. 4 september · 20:00–00:00 · Kapellen. Tickets nu te koop.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.de-pasto.be/summer-jam.php">
-  <meta property="og:image" content="https://www.de-pasto.be/assets/img/summer-jam/poster.webp">
+  <meta property="og:image" content="https://www.de-pasto.be/assets/img/summer-jam/dj-frank.webp">
   <meta property="og:locale" content="nl_BE">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/summer-jam.css">
+  <style>
+    .sj-artist-photo{margin:0;position:relative;overflow:hidden;box-shadow:10px 10px 0 rgba(23,63,46,.18)}
+    .sj-artist-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center}
+    .sj-artist--headliner .sj-artist-photo{box-shadow:10px 10px 0 rgba(243,214,64,.35)}
+    .sj-artist-copy h3{margin-bottom:18px}
+    .sj-artist-copy .sj-artist-tag{margin-top:0}
+    @media(max-width:900px){
+      .sj-artist{grid-template-columns:120px minmax(180px,.65fr) 1fr}
+    }
+    @media(max-width:720px){
+      .sj-artist,.sj-artist--headliner{grid-template-columns:1fr!important;gap:22px}
+      .sj-artist-photo{max-width:520px}
+      .sj-artist-role{padding-top:0}
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -33,8 +48,8 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
     "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
     "eventStatus":"https://schema.org/EventScheduled",
     "location":{"@type":"Place","name":"De Pasto","address":{"@type":"PostalAddress","streetAddress":"Dorpsstraat 45","postalCode":"2950","addressLocality":"Kapellen","addressCountry":"BE"}},
-    "image":["https://www.de-pasto.be/assets/img/summer-jam/poster.webp"],
-    "description":"Afsluiting van de zomer in De Pasto. Tickets zijn nu te koop; meer programma-informatie volgt.",
+    "image":["https://www.de-pasto.be/assets/img/summer-jam/dj-frank.webp","https://www.de-pasto.be/assets/img/summer-jam/sydney-ayven.webp","https://www.de-pasto.be/assets/img/summer-jam/dj-lauwers.webp"],
+    "description":"Afsluiting van de zomer in De Pasto met DJ Lauwers, DJ F.R.A.N.K. en Sydney Ayven. Tickets zijn nu te koop.",
     "organizer":{"@type":"Organization","name":"De Pasto","url":"https://www.de-pasto.be/"}
   }
   </script>
@@ -82,7 +97,6 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
       </div>
     </section>
 
-
     <section class="sj-lineup" id="line-up" aria-labelledby="lineup-title">
       <div class="sj-lineup-heading">
         <p>DE LINE-UP</p>
@@ -92,23 +106,40 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
       <div class="sj-artist-list">
         <article class="sj-artist">
           <div class="sj-artist-role">20:00 · OPENER</div>
-          <h3>DJ<br>LAUWERS</h3>
-          <p class="sj-artist-tag">BEKEND VAN TURBO</p>
-          <p>DJ Lauwers trapt Summer Jam af. Bekend van discotheek <strong>Turbo</strong> zet hij vanaf 20:00 de eerste lijnen uit voor een avond die alleen maar groter wordt.</p>
+          <figure class="sj-artist-photo">
+            <img src="assets/img/summer-jam/dj-lauwers.webp" alt="DJ Lauwers — opener van Summer Jam" loading="lazy" width="360" height="450">
+          </figure>
+          <div class="sj-artist-copy">
+            <h3>DJ<br>LAUWERS</h3>
+            <p class="sj-artist-tag">BEKEND VAN TURBO</p>
+            <p>DJ Lauwers trapt Summer Jam af. Bekend van discotheek <strong>Turbo</strong> zet hij vanaf 20:00 de eerste lijnen uit voor een avond die alleen maar groter wordt.</p>
+          </div>
         </article>
+
         <article class="sj-artist sj-artist--headliner">
           <div class="sj-artist-role">HEADLINER</div>
-          <h3>DJ<br>F.R.A.N.K.</h3>
-          <p class="sj-artist-tag">BELGIAN DANCE ICON</p>
-          <p>Frank Van Herwegen draait al sinds 1986 en groeide uit tot een vaste waarde in het Belgische nachtleven. Hij was jarenlang resident in onder meer Carré, Dixies en Highstreet, stond op grote festivals en events en is ook bekend van Qmusic.</p>
-          <p>En er is een perfecte link met deze avond: DJ F.R.A.N.K. was als remixer verbonden aan <strong>The Underdog Project</strong> en dus aan de klassieker <strong>“Summer Jam”</strong>. Daarnaast ken je hem van hits als <strong>“Discotex! (Yah!)”</strong> en <strong>“From the Left to the Right”</strong>.</p>
+          <figure class="sj-artist-photo">
+            <img src="assets/img/summer-jam/dj-frank.webp" alt="DJ F.R.A.N.K. — headliner van Summer Jam" loading="lazy" width="360" height="450">
+          </figure>
+          <div class="sj-artist-copy">
+            <h3>DJ<br>F.R.A.N.K.</h3>
+            <p class="sj-artist-tag">BELGIAN DANCE ICON</p>
+            <p>Frank Van Herwegen draait al sinds 1986 en groeide uit tot een vaste waarde in het Belgische nachtleven. Hij was jarenlang resident in onder meer Carré, Dixies en Highstreet, stond op grote festivals en events en is ook bekend van Qmusic.</p>
+            <p>En er is een perfecte link met deze avond: DJ F.R.A.N.K. was als remixer verbonden aan <strong>The Underdog Project</strong> en dus aan de klassieker <strong>“Summer Jam”</strong>. Daarnaast ken je hem van hits als <strong>“Discotex! (Yah!)”</strong> en <strong>“From the Left to the Right”</strong>.</p>
+          </div>
         </article>
+
         <article class="sj-artist">
           <div class="sj-artist-role">CLOSING SET</div>
-          <h3>SYDNEY<br>AYVEN</h3>
-          <p class="sj-artist-tag">ENERGETIC OPEN FORMAT</p>
-          <p>De afsluiter van Summer Jam is Sydney Ayven: een Belgische open-format DJ met een energieke, dynamische stijl en sterke crowd interaction.</p>
-          <p>Hij stond onder meer op <strong>Tomorrowland</strong>, The Day Before Tomorrow, Sunrise Festival en Sunset Festival, speelde in clubs als IKON, The Villa en Ampere en was te horen op Qmusic en TOPradio. Een set gebouwd om de laatste zomeravond helemaal af te maken.</p>
+          <figure class="sj-artist-photo">
+            <img src="assets/img/summer-jam/sydney-ayven.webp" alt="Sydney Ayven — closing set van Summer Jam" loading="lazy" width="360" height="450">
+          </figure>
+          <div class="sj-artist-copy">
+            <h3>SYDNEY<br>AYVEN</h3>
+            <p class="sj-artist-tag">ENERGETIC OPEN FORMAT</p>
+            <p>De afsluiter van Summer Jam is Sydney Ayven: een Belgische open-format DJ met een energieke, dynamische stijl en sterke crowd interaction.</p>
+            <p>Hij stond onder meer op <strong>Tomorrowland</strong>, The Day Before Tomorrow, Sunrise Festival en Sunset Festival, speelde in clubs als IKON, The Villa en Ampere en was te horen op Qmusic en TOPradio. Een set gebouwd om de laatste zomeravond helemaal af te maken.</p>
+          </div>
         </article>
       </div>
     </section>
