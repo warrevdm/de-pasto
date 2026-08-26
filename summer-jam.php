@@ -7,14 +7,17 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?></title>
-  <meta name="description" content="Summer Jam bij De Pasto op 4 september 2026 van 20:00 tot 00:00. 16+. Sluit de zomer mee af in Kapellen. Tickets zijn nu te koop.">
+  <meta name="description" content="Summer Jam bij De Pasto op 4 september 2026 van 20:00 tot 00:00. 16+. Early bird tickets zijn nu beschikbaar.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://www.de-pasto.be/summer-jam.php">
   <meta name="theme-color" content="#70a840">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
   <meta property="og:title" content="Summer Jam | De Pasto — 4 september 2026">
-  <meta property="og:description" content="Afsluiting van de zomer in De Pasto. 4 september · 20:00–00:00 · 16+ · Kapellen. Tickets nu te koop.">
+  <meta property="og:description" content="Afsluiting van de zomer in De Pasto. 4 september · 20:00–00:00 · 16+ · Early bird tickets nu beschikbaar.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.de-pasto.be/summer-jam.php">
   <meta property="og:image" content="https://www.de-pasto.be/assets/img/summer-jam/dj-frank.webp">
@@ -22,7 +25,7 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/summer-jam.css">
+  <link rel="stylesheet" href="assets/css/summer-jam.css?v=20260826-4">
   <style>
     .sj-artist-photo{margin:0;position:relative;overflow:hidden;box-shadow:10px 10px 0 rgba(23,63,46,.18)}
     .sj-artist-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center}
@@ -30,6 +33,27 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
     .sj-artist-copy h3{margin-bottom:18px}
     .sj-artist-copy .sj-artist-tag{margin-top:0}
     .sj-age-badge{display:inline-flex;align-items:center;justify-content:center;margin-top:24px;padding:10px 16px;border:3px solid currentColor;font-family:'Archivo Black',sans-serif;font-size:1.25rem;line-height:1;transform:rotate(-2deg)}
+
+    /* Early bird ticket popup */
+    .sj-earlybird{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:20px;background:rgba(10,35,25,.68);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);opacity:0;visibility:hidden;transition:opacity .28s ease,visibility .28s ease}
+    .sj-earlybird.is-visible{opacity:1;visibility:visible}
+    .sj-earlybird-card{position:relative;width:min(620px,100%);overflow:hidden;background:linear-gradient(145deg,#e3e833 0%,#90c63d 40%,#367642 100%);color:#173f2e;padding:clamp(28px,5vw,52px);box-shadow:18px 18px 0 rgba(20,60,49,.55);transform:translateY(24px) scale(.97);transition:transform .32s cubic-bezier(.2,.75,.3,1)}
+    .sj-earlybird.is-visible .sj-earlybird-card{transform:translateY(0) scale(1)}
+    .sj-earlybird-card:before{content:'SUMMER JAM';position:absolute;right:-.08em;top:.12em;writing-mode:vertical-rl;font-family:'Archivo Black',sans-serif;font-size:clamp(4.5rem,13vw,8rem);line-height:.7;color:transparent;-webkit-text-stroke:2px rgba(23,63,46,.13);pointer-events:none}
+    .sj-earlybird-close{position:absolute;z-index:2;top:14px;right:14px;width:42px;height:42px;border:2px solid #173f2e;background:rgba(247,243,232,.18);color:#173f2e;font-size:1.55rem;line-height:1;cursor:pointer;font-family:Arial,sans-serif}
+    .sj-earlybird-kicker{position:relative;z-index:1;margin:0 0 14px;font-size:.72rem;font-weight:900;letter-spacing:.18em}
+    .sj-earlybird h2{position:relative;z-index:1;margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(3.5rem,10vw,7.2rem);line-height:.76;letter-spacing:-.065em;text-transform:uppercase}
+    .sj-earlybird h2 span{display:block;color:#f7f3e8;-webkit-text-stroke:1px #173f2e;text-shadow:5px 5px 0 rgba(23,63,46,.16)}
+    .sj-earlybird-copy{position:relative;z-index:1;max-width:430px;margin:26px 0 0;font-size:clamp(1rem,2vw,1.15rem);line-height:1.55;font-weight:600}
+    .sj-earlybird-meta{position:relative;z-index:1;display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 28px}
+    .sj-earlybird-meta span{border:2px solid #173f2e;padding:7px 10px;font-size:.72rem;font-weight:900;letter-spacing:.1em}
+    .sj-earlybird-actions{position:relative;z-index:1;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+    .sj-earlybird-btn{display:inline-block;background:#173f2e;color:#f7f3e8;text-decoration:none;padding:16px 22px;font-weight:900;letter-spacing:.07em;box-shadow:7px 7px 0 #f3d640;transition:transform .18s ease,box-shadow .18s ease}
+    .sj-earlybird-btn:hover{transform:translate(3px,3px);box-shadow:4px 4px 0 #f3d640}
+    .sj-earlybird-later{border:0;background:transparent;color:#173f2e;text-decoration:underline;text-underline-offset:4px;font-weight:800;cursor:pointer;padding:8px 0}
+    .sj-earlybird-note{position:relative;z-index:1;margin:22px 0 0;font-size:.7rem;line-height:1.4;font-weight:700;opacity:.78}
+    body.sj-popup-open{overflow:hidden}
+
     @media(max-width:900px){
       .sj-artist{grid-template-columns:120px minmax(180px,.65fr) 1fr}
     }
@@ -37,6 +61,14 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
       .sj-artist,.sj-artist--headliner{grid-template-columns:1fr!important;gap:22px}
       .sj-artist-photo{max-width:520px}
       .sj-artist-role{padding-top:0}
+    }
+    @media(max-width:520px){
+      .sj-earlybird{padding:12px}
+      .sj-earlybird-card{padding:34px 24px 28px;box-shadow:9px 9px 0 rgba(20,60,49,.55)}
+      .sj-earlybird-card:before{opacity:.55}
+      .sj-earlybird-actions{align-items:stretch;flex-direction:column}
+      .sj-earlybird-btn{text-align:center;width:100%}
+      .sj-earlybird-later{text-align:center}
     }
   </style>
   <script type="application/ld+json">
@@ -50,13 +82,32 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
     "eventStatus":"https://schema.org/EventScheduled",
     "location":{"@type":"Place","name":"De Pasto","address":{"@type":"PostalAddress","streetAddress":"Dorpsstraat 45","postalCode":"2950","addressLocality":"Kapellen","addressCountry":"BE"}},
     "image":["https://www.de-pasto.be/assets/img/summer-jam/dj-frank.webp","https://www.de-pasto.be/assets/img/summer-jam/sydney-ayven.webp","https://www.de-pasto.be/assets/img/summer-jam/dj-lauwers.webp"],
-    "description":"Afsluiting van de zomer in De Pasto met DJ Lauwers, DJ F.R.A.N.K. en Sydney Ayven. Toegang vanaf 16 jaar. Tickets zijn nu te koop.",
+    "description":"Afsluiting van de zomer in De Pasto met DJ Lauwers, DJ F.R.A.N.K. en Sydney Ayven. Toegang vanaf 16 jaar. Early bird tickets zijn nu beschikbaar.",
     "typicalAgeRange":"16-",
     "organizer":{"@type":"Organization","name":"De Pasto","url":"https://www.de-pasto.be/"}
   }
   </script>
 </head>
 <body>
+  <div class="sj-earlybird" id="earlybird-popup" role="dialog" aria-modal="true" aria-labelledby="earlybird-title" aria-hidden="true">
+    <div class="sj-earlybird-card">
+      <button class="sj-earlybird-close" type="button" aria-label="Pop-up sluiten" data-close-earlybird>×</button>
+      <p class="sj-earlybird-kicker">LIMITED DROP · SUMMER JAM</p>
+      <h2 id="earlybird-title">EARLY<br><span>BIRD.</span></h2>
+      <p class="sj-earlybird-copy">De zomer afsluiten met DJ Lauwers, DJ F.R.A.N.K. en Sydney Ayven? <strong>Scoor nu je early bird ticket</strong> zolang de promotie beschikbaar is.</p>
+      <div class="sj-earlybird-meta">
+        <span>04.09.26</span>
+        <span>20:00—00:00</span>
+        <span>16+</span>
+      </div>
+      <div class="sj-earlybird-actions">
+        <a class="sj-earlybird-btn" href="#tickets" data-earlybird-ticket>PAK MIJN EARLY BIRD →</a>
+        <button class="sj-earlybird-later" type="button" data-close-earlybird>Ik kijk nog even rond</button>
+      </div>
+      <p class="sj-earlybird-note">Early bird is een tijdelijke ticketpromotie en kan stoppen zodra de beschikbare voorraad is bereikt.</p>
+    </div>
+  </div>
+
   <header class="sj-nav">
     <a class="sj-brand" href="index.php" aria-label="Terug naar De Pasto">DE PASTO</a>
     <div class="sj-nav-actions">
@@ -217,9 +268,9 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
 
     <section class="sj-tickets" id="tickets" aria-labelledby="ticket-title">
       <div class="sj-ticket-heading">
-        <p>TICKETS NU BESCHIKBAAR · 16+</p>
+        <p>EARLY BIRD TICKETS NU BESCHIKBAAR · 16+</p>
         <h2 id="ticket-title">ZIEN WE<br>JOU DAAR?</h2>
-        <p class="ticket-note">Koop je ticket hieronder via Weezevent en verzeker je plek voor DJ Lauwers, DJ F.R.A.N.K. en Sydney Ayven. Toegang vanaf 16 jaar.</p>
+        <p class="ticket-note">Scoor hieronder je early bird ticket via Weezevent en verzeker je plek voor DJ Lauwers, DJ F.R.A.N.K. en Sydney Ayven. Toegang vanaf 16 jaar.</p>
       </div>
       <div class="sj-ticket-widget">
         <a title="Logiciel billetterie en ligne"
@@ -246,5 +297,52 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
   </footer>
 
   <script type="text/javascript" src="https://widget.weezevent.com/weez.js"></script>
+  <script>
+    (function(){
+      const popup = document.getElementById('earlybird-popup');
+      if (!popup) return;
+
+      const storageKey = 'dePastoSummerJamEarlyBirdClosed';
+
+      function openPopup(){
+        if (sessionStorage.getItem(storageKey) === '1') return;
+        popup.classList.add('is-visible');
+        popup.setAttribute('aria-hidden','false');
+        document.body.classList.add('sj-popup-open');
+      }
+
+      function closePopup(){
+        popup.classList.remove('is-visible');
+        popup.setAttribute('aria-hidden','true');
+        document.body.classList.remove('sj-popup-open');
+        sessionStorage.setItem(storageKey,'1');
+      }
+
+      popup.querySelectorAll('[data-close-earlybird]').forEach(function(button){
+        button.addEventListener('click', closePopup);
+      });
+
+      const ticketButton = popup.querySelector('[data-earlybird-ticket]');
+      if (ticketButton){
+        ticketButton.addEventListener('click', function(){
+          closePopup();
+          window.setTimeout(function(){
+            const tickets = document.getElementById('tickets');
+            if (tickets) tickets.scrollIntoView({behavior:'smooth', block:'start'});
+          }, 80);
+        });
+      }
+
+      popup.addEventListener('click', function(event){
+        if (event.target === popup) closePopup();
+      });
+
+      document.addEventListener('keydown', function(event){
+        if (event.key === 'Escape' && popup.classList.contains('is-visible')) closePopup();
+      });
+
+      window.setTimeout(openPopup, 1400);
+    })();
+  </script>
 </body>
 </html>
