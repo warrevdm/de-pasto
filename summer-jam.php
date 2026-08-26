@@ -7,14 +7,14 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?></title>
-  <meta name="description" content="Summer Jam bij De Pasto op 4 september 2026 van 20:00 tot 00:00. Sluit de zomer mee af in Kapellen. Tickets zijn nu te koop.">
+  <meta name="description" content="Summer Jam bij De Pasto op 4 september 2026 van 20:00 tot 00:00. 16+. Sluit de zomer mee af in Kapellen. Tickets zijn nu te koop.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://www.de-pasto.be/summer-jam.php">
   <meta name="theme-color" content="#70a840">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta property="og:title" content="Summer Jam | De Pasto — 4 september 2026">
-  <meta property="og:description" content="Afsluiting van de zomer in De Pasto. 4 september · 20:00–00:00 · Kapellen. Tickets nu te koop.">
+  <meta property="og:description" content="Afsluiting van de zomer in De Pasto. 4 september · 20:00–00:00 · 16+ · Kapellen. Tickets nu te koop.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.de-pasto.be/summer-jam.php">
   <meta property="og:image" content="https://www.de-pasto.be/assets/img/summer-jam/dj-frank.webp">
@@ -29,6 +29,7 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
     .sj-artist--headliner .sj-artist-photo{box-shadow:10px 10px 0 rgba(243,214,64,.35)}
     .sj-artist-copy h3{margin-bottom:18px}
     .sj-artist-copy .sj-artist-tag{margin-top:0}
+    .sj-age-badge{display:inline-flex;align-items:center;justify-content:center;margin-top:24px;padding:10px 16px;border:3px solid currentColor;font-family:'Archivo Black',sans-serif;font-size:1.25rem;line-height:1;transform:rotate(-2deg)}
     @media(max-width:900px){
       .sj-artist{grid-template-columns:120px minmax(180px,.65fr) 1fr}
     }
@@ -49,7 +50,8 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
     "eventStatus":"https://schema.org/EventScheduled",
     "location":{"@type":"Place","name":"De Pasto","address":{"@type":"PostalAddress","streetAddress":"Dorpsstraat 45","postalCode":"2950","addressLocality":"Kapellen","addressCountry":"BE"}},
     "image":["https://www.de-pasto.be/assets/img/summer-jam/dj-frank.webp","https://www.de-pasto.be/assets/img/summer-jam/sydney-ayven.webp","https://www.de-pasto.be/assets/img/summer-jam/dj-lauwers.webp"],
-    "description":"Afsluiting van de zomer in De Pasto met DJ Lauwers, DJ F.R.A.N.K. en Sydney Ayven. Tickets zijn nu te koop.",
+    "description":"Afsluiting van de zomer in De Pasto met DJ Lauwers, DJ F.R.A.N.K. en Sydney Ayven. Toegang vanaf 16 jaar. Tickets zijn nu te koop.",
+    "typicalAgeRange":"16-",
     "organizer":{"@type":"Organization","name":"De Pasto","url":"https://www.de-pasto.be/"}
   }
   </script>
@@ -58,7 +60,7 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
   <header class="sj-nav">
     <a class="sj-brand" href="index.php" aria-label="Terug naar De Pasto">DE PASTO</a>
     <div class="sj-nav-actions">
-      <span>04.09.26</span>
+      <span>04.09.26 · 16+</span>
       <a href="#line-up">LINE-UP</a>
       <a href="#tickets">TICKETS</a>
     </div>
@@ -71,6 +73,7 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
         <p class="sj-kicker">DE PASTO PRESENTEERT</p>
         <h1 id="sj-title"><span class="date">4 SEP</span><span class="outline">SUMMER JAM</span></h1>
         <p class="sj-intro">We sluiten de zomer af zoals het hoort: samen in De Pasto. Met DJ Lauwers als opener, DJ F.R.A.N.K. als hoofdartiest en Sydney Ayven als afsluiter. Tickets zijn nu te koop.</p>
+        <div class="sj-age-badge">16+</div>
         <div class="sj-actions">
           <a class="sj-button" href="#tickets">KOOP TICKETS</a>
           <a class="sj-text-link" href="index.php">NAAR DE PASTO →</a>
@@ -80,6 +83,7 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
       <div class="sj-event-meta">
         <div><small>DATUM</small><strong>4 SEPTEMBER</strong></div>
         <div><small>UREN</small><strong>20:00—00:00</strong></div>
+        <div><small>LEEFTIJD</small><strong>16+</strong></div>
         <div><small>LOCATIE</small><strong>DORPSSTRAAT 45<br>2950 KAPELLEN</strong></div>
       </div>
     </section>
@@ -93,7 +97,8 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
         <p class="big">Eén laatste zomeravond in De Pasto.</p>
         <p>Op vrijdag 4 september sluiten we samen de zomer af met Summer Jam. Van 20:00 tot 00:00 maken we van De Pasto een zomerse ontmoetingsplek met muziek, sfeer en een volle avond in het hart van Kapellen.</p>
         <p>Van de eerste plaat tot de laatste: drie DJ’s bouwen de avond op van 20:00 tot 00:00. DJ Lauwers opent, DJ F.R.A.N.K. neemt de hoofdset voor zijn rekening en Sydney Ayven sluit Summer Jam af.</p>
-        <div class="sj-stamp">04 / 09 / 26<br><span>KAPELLEN</span></div>
+        <p><strong>Summer Jam is toegankelijk vanaf 16 jaar.</strong></p>
+        <div class="sj-stamp">04 / 09 / 26<br><span>KAPELLEN · 16+</span></div>
       </div>
     </section>
 
@@ -164,15 +169,15 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
         </article>
         <article class="sj-detail-card">
           <span class="sj-card-number">03</span>
-          <h3>KOM SLIM</h3>
-          <p>De parkeermogelijkheden rond het evenement zijn beperkt.</p>
-          <p>Kom daarom bij voorkeur <strong>te voet, met de fiets, deelfiets of het openbaar vervoer</strong>.</p>
+          <h3>LEEFTIJD</h3>
+          <p><strong>16+</strong></p>
+          <p>Summer Jam is toegankelijk vanaf 16 jaar.</p>
         </article>
         <article class="sj-detail-card">
           <span class="sj-card-number">04</span>
-          <h3>VERKEER</h3>
-          <p>De <strong>Oude Kerkstraat</strong> wordt tijdelijk afgesloten in functie van het evenement.</p>
-          <p>Hou rekening met een aangepaste verkeerssituatie in de directe omgeving.</p>
+          <h3>KOM SLIM</h3>
+          <p>De parkeermogelijkheden rond het evenement zijn beperkt.</p>
+          <p>Kom daarom bij voorkeur <strong>te voet, met de fiets, deelfiets of het openbaar vervoer</strong>.</p>
         </article>
       </div>
     </section>
@@ -186,6 +191,10 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
         <details>
           <summary>Wanneer is Summer Jam?</summary>
           <p>Vrijdag 4 september 2026 van 20:00 tot 00:00.</p>
+        </details>
+        <details>
+          <summary>Vanaf welke leeftijd mag ik binnen?</summary>
+          <p>Summer Jam is 16+. Je moet dus minstens 16 jaar oud zijn om toegang te krijgen.</p>
         </details>
         <details>
           <summary>Waar gaat Summer Jam door?</summary>
@@ -208,9 +217,9 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
 
     <section class="sj-tickets" id="tickets" aria-labelledby="ticket-title">
       <div class="sj-ticket-heading">
-        <p>TICKETS NU BESCHIKBAAR</p>
+        <p>TICKETS NU BESCHIKBAAR · 16+</p>
         <h2 id="ticket-title">ZIEN WE<br>JOU DAAR?</h2>
-        <p class="ticket-note">Koop je ticket hieronder via Weezevent en verzeker je plek voor DJ Lauwers, DJ F.R.A.N.K. en Sydney Ayven.</p>
+        <p class="ticket-note">Koop je ticket hieronder via Weezevent en verzeker je plek voor DJ Lauwers, DJ F.R.A.N.K. en Sydney Ayven. Toegang vanaf 16 jaar.</p>
       </div>
       <div class="sj-ticket-widget">
         <a title="Logiciel billetterie en ligne"
@@ -232,7 +241,7 @@ $pageTitle = 'Summer Jam | De Pasto — 4 september 2026';
 
   <footer class="sj-footer">
     <strong>DE PASTO</strong>
-    <span>DORPSSTRAAT 45 · 2950 KAPELLEN</span>
+    <span>DORPSSTRAAT 45 · 2950 KAPELLEN · SUMMER JAM 16+</span>
     <a href="index.php">DE-PASTO.BE</a>
   </footer>
 
